@@ -1,0 +1,14 @@
+<html>
+ <head> <title>MapServer Third Map</title></head>
+ <body>
+  <form method=POST action="/cgi-bin/mapserv">
+    <input type="submit" value="Click to initialize">
+    <input type="hidden" name="program" value="mapserv">
+    <input type="hidden" name="map" value="/home/mapdata/third.map">
+    <input type="hidden" name="mapext" value="-180.00 0.00 -60.00 90.00">
+    <input type="hidden" name=zoomsize size=2 value=2>
+    <input type="hidden" name="layers" 
+        value="urbanareas lakes states roads capitals">
+  </form>
+ </body>
+</html>

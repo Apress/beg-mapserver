@@ -1,0 +1,382 @@
+# This is our fifth map file
+NAME "fifth"
+UNITS dd
+EXTENT -97.384655 49.697475 -96.877772 50.077168
+SIZE 640 480
+IMAGECOLOR 255 255 255
+IMAGETYPE PNG
+SHAPEPATH "/home/mapdata"
+FONTSET "/var/www/htdocs/fontset.txt"
+
+
+##################################### 
+# Symbol for drawing fat lines
+#
+SYMBOL
+     NAME "BigLine"
+     TYPE ELLIPSE
+     POINTS 1 1 END
+END
+
+
+##################################### 
+# Symbol for drawing spots
+#
+SYMBOL
+     NAME "Circle"
+     FILLED true
+     TYPE ellipse
+     POINTS 1 1 END
+END
+
+##################################### 
+# Symbol for drawing cup symbols
+#
+SYMBOL
+     NAME "Cup"
+
+     TYPE pixmap
+     IMAGE "/var/www/htdocs/cup.gif"
+END
+
+
+##################################### 
+# Reference map
+#
+REFERENCE
+     IMAGE "/var/www/htdocs/fifth_wpgref.gif"
+     SIZE 300 225
+     EXTENT -97.384655 49.697475 -96.877772 50.077168
+     STATUS ON
+     COLOR -1 -1 -1
+     OUTLINECOLOR 255 0 0
+END
+
+
+##################################### 
+# Scalebar
+#
+SCALEBAR
+     LABEL
+          COLOR 0 0 0 
+          ANTIALIAS true
+          SIZE small
+     END
+     POSITION lr
+     INTERVALS 2
+     STATUS embed
+     SIZE 144 5
+     STYLE 0
+     UNITS miles
+     BACKGROUNDCOLOR 255 0 0
+     IMAGECOLOR 255 255 255
+     COLOR 128 128 128     
+     OUTLINECOLOR 0 0 255
+     TRANSPARENT off
+END
+
+
+##################################### 
+# Neighborhoods layer - hoods
+#
+LAYER
+     NAME "hoods"
+     DATA "nrn_geo"
+     STATUS on
+     TYPE polygon
+     LABELCACHE on
+     LABELITEM "NRNNAME"
+     CLASSITEM "NRN"
+     CLASS
+          EXPRESSION /^01/
+          STYLE
+               COLOR 173 152 4
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /002/
+          STYLE
+               COLOR 192 92 74
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^03/
+          STYLE
+               COLOR 179 178 107
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^04/
+          STYLE
+               COLOR 140 66 28
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^05/
+          STYLE
+               COLOR 198 148 90
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /006/
+          STYLE
+               COLOR 98 142 96
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^07/
+          STYLE
+               COLOR 206 156 24
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^08/
+          STYLE
+               COLOR 169 173 99
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+
+     CLASS
+          EXPRESSION /^09/
+          STYLE
+               COLOR 165 173 90
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^10/
+          STYLE
+               COLOR 193 187 144
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^11A/
+          STYLE
+               COLOR 175 175 223
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^11B/
+          STYLE
+               COLOR  196 200 72
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 255
+          END
+     END
+     CLASS
+          EXPRESSION /^12/
+          STYLE
+               COLOR 239 231 140
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 140 66 28
+               POSITION cc
+               OUTLINECOLOR 255 255 0
+          END
+     END
+END
+
+
+##################################### 
+# hydrographic layer - rivers
+#
+LAYER
+     NAME "rivers"
+     DATA "waterp_geo"
+     STATUS on
+     TYPE polygon
+     CLASSITEM "HYDRO_NAME"
+     CLASS
+          EXPRESSION /RIVER*/
+          STYLE
+               COLOR 0 0 255
+          END
+     END
+END
+
+
+##################################### 
+# Road layer - majorstreets
+#
+LAYER
+     NAME "majorstreets"
+     DATA "roads_type"
+     STATUS on
+     TYPE line
+     LABELCACHE on
+     LABELITEM "NAME"
+     CLASS
+          EXPRESSION ([STATUS] = 1)
+          STYLE
+               SYMBOL "BigLine"
+               SIZE 2
+               COLOR 0 0 0
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 10
+               COLOR 0 0 0
+               OUTLINECOLOR 255 255 255
+               MINDISTANCE 300
+               POSITION auto
+               ANGLE auto
+               MINFEATURESIZE 25
+          END
+     END
+END
+
+
+##################################### 
+# Road layer - streets
+#
+LAYER
+     NAME "streets"
+     DATA "roads_type"
+     STATUS on
+     TYPE line
+     LABELCACHE on
+     LABELITEM "NAME"
+     MAXSCALE 120000
+     CLASS
+          EXPRESSION ([STATUS] != 1)
+          STYLE
+               SYMBOL "BigLine"
+               SIZE 1
+               COLOR 0 0 0
+          END
+          LABEL
+               TYPE truetype
+               FONT "arialbd"
+               SIZE 8
+               COLOR 0 0 0
+               OUTLINECOLOR 255 255 255
+               MINDISTANCE 300
+               POSITION auto
+               ANGLE auto
+               MINFEATURESIZE auto
+          END
+     END
+END
+
+
+##################################### 
+# POI layer - points of interest
+#
+LAYER
+     NAME "poi"
+     STATUS default
+     TYPE point	
+     LABELCACHE on
+     TOLERANCEUNITS miles
+     CLASS
+          SYMBOL "Cup"
+          SIZE 40
+          STYLE
+               COLOR 255 0 0
+          END
+          TEMPLATE "dummy.html"
+          TEXT ""
+          LABEL
+               BUFFER 20 
+          END
+     END
+END
+
+END # mapfile 

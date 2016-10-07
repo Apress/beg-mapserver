@@ -1,0 +1,40 @@
+<html>
+  <head><title>MapServer Fourth Application</title></head>
+  <body>
+
+    <form method=GET action="/cgi-bin/mapserv">
+        <input type="submit" value="Click Me">
+
+        <input type="hidden" name="program" 
+               value="mapserv">
+
+        <input type="hidden" name="map" 
+               value="/home/mapdata/fourth.map">
+
+        <input type="hidden" name=zoomsize 
+               size=2 value=2>
+
+        <input type="hidden" name=map_Cities_tolerance 
+               size=4 value=100>
+
+        <input type="hidden" name=map_Countries_tolerance 
+               size=4 value=100>
+
+        <input type="hidden" name="layers" 
+               value="Cities Countries">
+
+        <input type="hidden" name="slayer"
+               value="Countries">
+
+        <input type="hidden" name="mapshape"   value="">
+        <input type="hidden" name="imgshape"   value="">
+        <input type="hidden" name="imgbox"     value="">
+        <input type="hidden" name="qstring"    value="">
+        <input type="hidden" name="qlayer"     value="">
+        <input type="hidden" name="qitem"      value="">
+        <input type="hidden" name="shapeindex" value="">
+        <input type="hidden" name="savequery"  value="">
+
+    </form>
+  </body>
+</html>

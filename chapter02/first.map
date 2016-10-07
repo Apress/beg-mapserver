@@ -1,0 +1,29 @@
+# This is our first mapfile
+NAME "First"
+SIZE 400 300
+IMAGECOLOR 255 255 255
+IMAGETYPE JPEG
+SHAPEPATH "/home/mapdata/"
+EXTENT -125.00 20.00 -65.00 50
+WEB
+    TEMPLATE '/var/www/htdocs/first.html'
+    IMAGEPATH '/var/www/htdocs/tmp/'
+    IMAGEURL '/tmp/'
+END
+LAYER
+    NAME "US States"					 
+    STATUS default
+    TYPE line
+    DATA "statesp020"
+    LABELITEM "STATE"
+    CLASS
+       STYLE
+            COLOR 0 0 0
+       END
+       LABEL
+            COLOR 0 0 0
+            SIZE small
+       END
+    END
+END
+END

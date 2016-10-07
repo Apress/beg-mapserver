@@ -1,0 +1,54 @@
+<html>
+<head><title>Third Map</title></head>
+<body bgcolor="#E6E6E6">
+ <form name="the_form" method=GET action="[program]">  
+  <table width="100%" border="1">
+   <tr><td width="60%" rowspan="6">
+       <input name="img" type="image" src="[img]" 
+               width=640 height=480 border=2>
+       </td>
+       <td width="40%" align="center" colspan="3">
+       <img SRC="[ref]" width=300 height=225 border=1>
+       </td>
+   </tr>
+   <tr><td align="left" colspan="3"><font size="-1">
+       Map scale:&nbsp &nbsp &nbsp 1:[scale]</font></td></tr>
+   <tr><td align="left" colspan="3"><font size="-1">
+       Click x,y:&nbsp &nbsp &nbsp &nbsp [mapx], [mapy]</font></td></tr>
+   <tr><td align="left" colspan="3"><font size="-1">
+       Map Extent:&nbsp [mapext]</font></td></tr>
+   <tr><td><B><center>Legend</center></B></td>
+       <td><B><center>Navigation</center></B></td>
+       <td><B><center>Layers</center></B></td></tr>
+   <tr><td rowspan="2"><img src="[legend]"></td>
+       <td align="left"><font size="-1">
+       <input type=radio name=zoomdir value=0 [zoomdir_0_check]>
+          Pan<BR>
+       <input type=radio name=zoomdir value=1 [zoomdir_1_check]>
+          Zoom In<BR>
+       <input type=radio name=zoomdir value=-1 [zoomdir_-1_check]>
+          Zoom Out<BR>
+       <input type=text name=zoomsize size=1 value=[zoomsize]>
+          Size<BR>
+       <center><input type="submit" value="Refresh"></center>
+       </td>
+       <td align="top">
+       <input type="checkbox" name="layer" value="urbanareas" 
+          [urbanareas_check]>
+          Urban Areas<BR>
+       <input type="checkbox" name="layer" value="lakes" [lakes_check]>
+          Lakes<BR>
+       <input type="checkbox" name="layer" value="states" [states_check]>
+          State Boundaries<BR>
+       <input type="checkbox" name="layer" value="roads" [roads_check]>
+          Roads<BR></font>
+       </td>
+   </tr>
+  </table>
+   <input type="hidden" name="imgxy" value="320 240">
+   <input type="hidden" name="imgext" value="[mapext]">
+   <input type="hidden" name="map" value="[map]">
+   <input type="hidden" name="program" value="[program]">
+ </form>
+</body>
+</html>

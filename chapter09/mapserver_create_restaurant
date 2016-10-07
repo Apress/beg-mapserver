@@ -1,0 +1,52 @@
+CREATE DATABASE restaurant;
+
+USE restaurant;
+
+CREATE TABLE store (
+   id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+   address VARCHAR(25) NOT NULL,
+   latitude FLOAT NOT NULL,
+   longitude FLOAT NOT NULL,
+   phone TINYTEXT NOT NULL,
+   opentime TIME NOT NULL,
+   closetime TIME NOT NULL,
+   PRIMARY KEY(id));
+
+CREATE TABLE product (
+   id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
+   description VARCHAR(20) NOT NULL,
+   PRIMARY KEY(id));
+
+CREATE TABLE menu (
+   store_id TINYINT UNSIGNED NOT NULL,
+   product_id TINYINT UNSIGNED NOT NULL,
+   INDEX store_id (store_id));
+
+INSERT INTO product (id, description) VALUES ('DEFAULT','Sandwiches');   
+INSERT INTO product (id, description) VALUES ('DEFAULT','Coffee');
+INSERT INTO product (id, description) VALUES ('DEFAULT','WiFi');
+INSERT INTO product (id, description) VALUES ('DEFAULT','Bookstore');
+INSERT INTO product (id, description) VALUES ('DEFAULT','Flat food');
+INSERT INTO product (id, description) VALUES ('DEFAULT','Math lectures');
+
+INSERT INTO store (id, address, latitude, longitude, phone, opentime, closetime) VALUES ('DEFAULT','201 Portage Ave',49.895524,-97.138450,'728-1234','08:00:00','20:00:00');
+INSERT INTO store (id, address, latitude, longitude, phone, opentime, closetime) VALUES ('DEFAULT','1200 Grant Ave',49.857844,-97.169163,'958-6789','07:00:00','21:00:00');
+INSERT INTO store (id, address, latitude, longitude, phone, opentime, closetime) VALUES ('DEFAULT','1436 Pembina Highway',49.809118,-97.15649,'726-6205','00:00:00','00:00:00');
+INSERT INTO store (id, address, latitude, longitude, phone, opentime, closetime) VALUES ('DEFAULT','800 St Marys Rd',49.844207,-97.112701,'510-8976','08:00:00','00:00:00');
+INSERT INTO store (id, address, latitude, longitude, phone, opentime, closetime) VALUES ('DEFAULT','10234 King Edward St',49.898311,-97.207146,'233-9248','06:00:00','12:00:00');
+
+INSERT INTO menu (store_id, product_id) VALUES ( 1, 1);
+INSERT INTO menu (store_id, product_id) VALUES ( 1, 2);
+INSERT INTO menu (store_id, product_id) VALUES ( 1, 3);
+INSERT INTO menu (store_id, product_id) VALUES ( 2, 1);
+INSERT INTO menu (store_id, product_id) VALUES ( 2, 2);
+INSERT INTO menu (store_id, product_id) VALUES ( 2, 4);
+INSERT INTO menu (store_id, product_id) VALUES ( 3, 1);
+INSERT INTO menu (store_id, product_id) VALUES ( 3, 2);
+INSERT INTO menu (store_id, product_id) VALUES ( 3, 5);
+INSERT INTO menu (store_id, product_id) VALUES ( 4, 1);
+INSERT INTO menu (store_id, product_id) VALUES ( 4, 2);
+INSERT INTO menu (store_id, product_id) VALUES ( 4, 6);
+INSERT INTO menu (store_id, product_id) VALUES ( 5, 2);
+INSERT INTO menu (store_id, product_id) VALUES ( 5, 3);
+INSERT INTO menu (store_id, product_id) VALUES ( 5, 6);

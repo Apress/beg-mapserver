@@ -1,0 +1,52 @@
+<html>
+<head><title>Second Map</title></head>
+<body>
+  <form name="the_form" method=GET action="[program]">  
+    <table width="100%">
+      <tr>
+        <td width="60%">
+          <input name="img" type="image" src="[img]" 
+                 width=640 height=480 border=2></td>
+        <td width="40%" align="left">
+	  <table border="1" width="300">
+            <tr><td align="center" colspan="3">
+               <input type="submit" value="Refresh"></td></tr>
+            <tr><td align="center" colspan="3">Zoom</td></tr>
+            <tr><td align="right" width="100">Zoom In
+               <input type=radio name=zoomdir value=1 
+                   [zoomdir_1_check]></td>
+                <td align="right" width="100">Zoom Out
+               <input type=radio name=zoomdir value=-1 
+                   [zoomdir_-1_check]></td>
+                <td align="right" width="100">Size
+               <input type=text name=zoomsize size=2 
+                   value=[zoomsize]></td></tr>
+            <tr><td align="center" colspan="3">Pan
+               <input type=radio name=zoomdir 
+                   value=0 [zoomdir_0_check]></td></tr>
+	  </table>
+          <hr size="1">
+	  <table>
+	    <tr><td colspan="3">
+               <input type="checkbox" name="layer" value="urbanareas"
+                   [urbanareas_check]>Urban Areas</td></tr>
+	    <tr><td colspan="3"><input type="checkbox" 
+                   name="layer" value="lakes" 
+                   [lakes_check]>Lakes</td></tr>
+	    <tr><td colspan="3"><input type="checkbox" 
+                   name="layer" value="states" 
+                   [states_check]>State Boundaries</td></tr>
+	    <tr><td colspan="3"><input type="checkbox" 
+                   name="layer" value="roads" 
+                   [roads_check]>Roads</td></tr>
+	  </table>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="imgxy" value="320 240">
+    <input type="hidden" name="imgext" value="[mapext]">
+    <input type="hidden" name="map" value="[map]">
+    <input type="hidden" name="program" value="[program]">
+  </form>
+</body>
+</html>

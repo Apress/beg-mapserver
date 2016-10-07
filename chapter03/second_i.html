@@ -1,0 +1,13 @@
+<html>
+ <head> <title>MapServer Second Map</title></head>
+ <body>
+  <form method=POST action="/cgi-bin/mapserv">
+    <input type="submit" value="Click to initialize">
+    <input type="hidden" name="program" value="/cgi-bin/mapserv">
+    <input type="hidden" name="map" value="/home/mapdata/second.map">
+    <input type="hidden" name=zoomsize size=2 value=2>
+    <input type="hidden" name="layers" 
+           value="urbanareas lakes states roads capitals">
+  </form>
+ </body>
+</html>
